@@ -1,0 +1,237 @@
+<?php
+
+session_start();
+include ('helper.php');
+
+$user = array();
+
+
+if(isset($_SESSION['userID'])){
+    require ('mysqli_connect.php');
+    $user = get_user_info($con, $_SESSION['userID']);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Corona.tn</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">Corona.tn</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Login</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                        
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">Corona.tn</h1>
+                        <h2 class="home__subtitle">كان تحس لي عندك اعراض <br> .كورونا</h2>
+                        <a href="register.php" target = "_blank" class="button">عمر الاستمارة</a>
+                    </div>
+    
+                    <img src="assets/img/home.png" alt="" class="home__img">
+                </div>
+            </section>
+            
+            <!--========== ABOUT ==========-->
+            <section class="about section bd-container" id="about">
+                <div class="about__container  bd-grid">
+                    <div class="about__data">
+                        <span class="section-subtitle about__initial">About us</span>
+                        <h2 class="section-title about__initial">فاش تستنا باش تشارك معانا؟ <br> Corona.tn</h2>
+                        <p class="about__description">شارك معانا فيسع ،احمي روحك و احمي صغارك ،معانا احنا و معاك انت انجموا نوقفوا مع بعضنا و نصلحوا تونس</p>
+                        <a href="#" class="button">للمزيد من المعلومات</a>
+                    </div>
+
+                    <img src="assets/img/about.png" alt="" class="about__img">
+                </div>
+            </section>
+
+            <!--========== SERVICES ==========-->
+            <section class="services section bd-container" id="services">
+                <span class="section-subtitle">Offering</span>
+                <h2 class="section-title">فاش تتمثل خدماتنا؟</h2>
+
+                <div class="services__container  bd-grid">
+                    <div class="services__content">
+                        <img src="assets/img/tunis.png" alt="" class="menu__img">
+                        <h3 class="services__title">اللوغة العربية</h3>
+                        <p class="services__description"> نقدمولك احسن و افضل محتوى تنجم تتمتع بيها اللغة التونسية </p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="assets/img/youtu.png" alt="" class="menu__img">
+                        <h3 class="services__title">توعية</h3>
+                        <p class="services__description">نقدمولك باج توعوية كاملة على ذمتك فيها العديد من النصائح باش تحمي روحك</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="assets/img/certificate.png" alt="" class="menu__img">
+                        <h3 class="services__title">انقراض الوباء</h3>
+                        <p class="services__description">نقدمولك ضمان بعدم انتشار الوباء كان التزمت بالتعليمات</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--========== MENU ==========-->
+            <section class="menu section bd-container" id="menu">
+                <span class="section-subtitle">Special</span>
+                <h2 class="section-title">الالة الجديدة توصلك لباب الدار</h2>
+
+                <div class="menu__container bd-grid">
+                    <div class="menu__content">
+                        <img src="assets/img/plate1.png" alt="" class="menu__img">
+                        <h3 class="menu__name">Web Devolopment</h3>
+                        <span class="menu__detail">New course</span>
+                        <span class="menu__preci">$22.00</span>
+                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+
+                    <div class="menu__content">
+                        <img src="assets/img/plate2.png" alt="" class="menu__img">
+                        <h3 class="menu__name">Python</h3>
+                        <span class="menu__detail">New course</span>
+                        <span class="menu__preci">$12.00</span>
+                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+                    
+                    <div class="menu__content">
+                        <img src="assets/img/plate3.png" alt="" class="menu__img">
+                        <h3 class="menu__name">Arduino</h3>
+                        <span class="menu__detail">New course</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== APP =======-->
+            <section class="app section bd-container">
+                <div class="app__container bd-grid">
+                    <div class="app__data">
+                        <span class="section-subtitle app__initial">App</span>
+                        <h2 class="section-title app__initial">App will be aviable</h2>
+                        <p class="app__description">Find our application and download it, you can get many courses, Tutorial, see your certificate and much more.</p>
+                        <div class="app__stores">
+                            <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
+                            <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                        </div>
+                    </div>
+
+                    <img src="assets/img/movil-app.png" alt="" class="app__img">
+                </div>
+            </section>
+
+            <!--========== CONTACT US ==========-->
+            <section class="contact section bd-container" id="contact">
+                <div class="contact__container bd-grid">
+                    <div class="contact__data">
+                        <span class="section-subtitle contact__initial">Let's talk</span>
+                        <h2 class="section-title contact__initial">Contact us</h2>
+                        <p class="contact__description">If you want to get a subsicribe, contact us and we will attend you quickly, with our 24/7 chat service.</p>
+                    </div>
+
+                    <div class="contact__button">
+                        <a href="https://www.instagram.com/badr_sekrafi/" class="button">Contact us now</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--========== https://github.com/Justcodeit2/desktop-tutorial.git ==========-->
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">Corona.tn</a>
+                    <span class="footer__description">profile</span>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=100001324497791" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/just_code.it/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://drive.google.com/drive/folders/11b4LW0SfziFp1WJ-gpXlLYj7iLVMYIFr" class="footer__social"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Course</a></li>
+                        <li><a href="#" class="footer__link">Tutorial</a></li>
+                        <li><a href="#" class="footer__link">chaine Youtube</a></li>
+                        <li><a href="#" class="footer__link">subsucribe</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Event</a></li>
+                        <li><a href="#" class="footer__link">Contact us</a></li>
+                        <li><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Djerba-Tunis</li>
+                        <li>Homt_souk #4180</li>
+                        <li>+216 27 648 386</li>
+                        <li>sekrafibadr@icloud.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; 2021 Badercode. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>
+<?php
+include "footer.php";
+?>
